@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF8F4">
+  <title>Rey Jenus & Jay Anne | Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- OPENING SCREEN -->
+  <main class="opening-screen framed-section" id="openingScreen">
+    <span class="frame-corner tl"></span>
+    <span class="frame-corner tr"></span>
+    <span class="frame-corner bl"></span>
+    <span class="frame-corner br"></span>
+
+    <div class="floating-decor" aria-hidden="true"></div>
+
+    <div class="opening-content">
+      <p class="opening-label">
+        YOU ARE CORDIALLY INVITED TO CELEBRATE
+      </p>
+
+      <h1 class="couple-names">
+        <span class="name">Rey Jenus</span>
+        <span class="ampersand">&amp;</span>
+        <span class="name">Jay Anne</span>
+      </h1>
+
+      <div class="ornament-divider">✦</div>
+
+      <p class="invitation-text">
+        As they begin their journey to forever
+      </p>
+
+      <p class="wedding-date">11 · 21 · 2026</p>
+      <p class="wedding-time">♥ AT 2:00 PM ♥</p>
+
+      <!-- ENVELOPE -->
+      <div class="envelope-stage" id="envelope">
+        <div class="envelope">
+
+          <div class="envelope-back"></div>
+
+          <div class="envelope-paper" id="envelopePaper">
+            <div class="paper-quote">
+              “Two hearts, one beautiful journey,<br>
+              and a lifetime to share.”
+            </div>
+
+            <div class="paper-letter">
+              To our dearest family and friends,
+              <br><br>
+              With grateful hearts, we invite you to
+              celebrate the beginning of our forever.
+              Your presence will make our special day
+              even more meaningful.
+            </div>
+
+            <div class="paper-signature">
+              <span>With love,</span>
+              <strong>R &amp; J</strong>
+            </div>
+          </div>
+
+          <div class="envelope-front"></div>
+          <div class="envelope-fold-left"></div>
+          <div class="envelope-fold-right"></div>
+          <div class="envelope-flap"></div>
+
+          <button
+            class="wax-seal"
+            id="waxSeal"
+            type="button"
+            aria-label="Open wedding invitation"
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 100 95" aria-hidden="true">
+              <defs>
+                <linearGradient id="radiantHeart" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#EBC0BD"/>
+<stop offset="25%" stop-color="#DFA9AB"/>
+<stop offset="50%" stop-color="#C88F98"/>
+<stop offset="75%" stop-color="#B77985"/>
+<stop offset="100%" stop-color="#A56D79"/>
+                </linearGradient>
+              </defs>
+
+              <path
+                d="M50 85 Q46 85 42 81 C23 65 7 51 7 31 C7 11 32 5 46 21 Q50 26 50 26 Q50 26 54 21 C68 5 93 11 93 31 C93 51 77 65 58 81 Q54 85 50 85 Z"
+                fill="url(#radiantHeart)"
+                stroke="#855762"
+                stroke-width="3.2"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="seal-text">R &amp; J</span>
+          </button>
+
+        </div>
+      </div>
+
+      <p class="open-text">✦ OPEN OUR INVITATION ✦</p>
+
+      <!-- MUSIC PLAYER: SHOWS AFTER OPENING -->
+      <div class="opening-extras" id="openingExtras" hidden>
+        <div class="wedding-player">
+          <div class="player-caption">OUR LOVE SONG ♥</div>
+
+          <input
+            class="player-progress"
+            id="musicProgress"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="0.1"
+            aria-label="Song progress"
+          >
+
+          <div class="player-controls">
+            <button class="player-icon" id="musicRestart" type="button" aria-label="Restart song">↶</button>
+
+            <button class="player-heart" id="musicToggle" type="button" aria-label="Play music">
+              <svg viewBox="0 0 52 48" aria-hidden="true">
+                <path
+                  d="M26 46C14 35 2 27 2 15 2 2 18-3 26 9 34-3 50 2 50 15c0 12-12 20-24 31Z"
+                  fill="currentColor"
+                />
+                <path class="heart-symbol" d="M22 16v17l13-8.5Z" fill="#FFFDF9"/>
+              </svg>
+            </button>
+
+            <button
+              class="player-icon is-active"
+              id="musicRepeat"
+              type="button"
+              aria-label="Toggle repeat"
+              aria-pressed="true"
+            >↻</button>
+          </div>
+
+          <div class="player-status" id="musicStatus">
+            Tap the heart to play
+          </div>
+        </div>
+
+        <button class="scroll-indicator" id="scrollIndicator" type="button">
+          <span>DISCOVER OUR FOREVER</span>
+          <svg viewBox="0 0 36 42" aria-hidden="true">
+            <path d="M18 3v28m-11-9 11 11 11-11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- MAIN WEDDING DETAILS -->
+  <section class="countdown-section framed-section" id="countdownSection">
+    <span class="frame-corner tl"></span>
+    <span class="frame-corner tr"></span>
+    <span class="frame-corner bl"></span>
+    <span class="frame-corner br"></span>
+
+    <div class="floating-decor" aria-hidden="true"></div>
+
+    <div class="countdown-content">
+
+      <!-- COUNTDOWN -->
+      <h2 class="section-title">COUNTDOWN TO THE WEDDING</h2>
+      <div class="ornament-divider">♥</div>
+
+      <div class="countdown-timer">
+        <div class="countdown-box">
+          <strong id="days">00</strong>
+          <span>DAYS</span>
+        </div>
+        <div class="countdown-box">
+          <strong id="hours">00</strong>
+          <span>HOURS</span>
+        </div>
+        <div class="countdown-box">
+          <strong id="minutes">00</strong>
+          <span>MINUTES</span>
+        </div>
+        <div class="countdown-box">
+          <strong id="seconds">00</strong>
+          <span>SECONDS</span>
+        </div>
+      </div>
+
+      <div class="countdown-date">NOVEMBER 21, 2026</div>
+      <div class="countdown-time">♥ 2:00 PM ♥</div>
+
+      <!-- CEREMONY AND RECEPTION -->
+      <div class="details-block">
+        <h2 class="section-title">CEREMONY + RECEPTION</h2>
+        <div class="ornament-divider">✦</div>
+
+        <div class="venue-name">St. Francis Xavier Parish</div>
+        <div class="venue-location">Alegria, Cebu</div>
+
+        <div class="reception-divider"></div>
+
+        <div class="reception-name">Lucci's Bistro</div>
+        <div class="reception-note">Reception to follow</div>
+      </div>
+
+      <!-- DRESS CODE -->
+      <div class="details-block">
+        <h2 class="section-title">PASTEL DRESS CODE + COLOR PALETTE</h2>
+        <div class="ornament-divider">✦</div>
+
+        <p class="dress-code-text">Any pastel colors are welcome.</p>
+
+        <div class="pastel-palette">
+          <div class="pastel-color"><span class="color-circle pastel-pink"></span>Pink</div>
+          <div class="pastel-color"><span class="color-circle pastel-blue"></span>Baby Blue</div>
+          <div class="pastel-color"><span class="color-circle pastel-lavender"></span>Lavender</div>
+          <div class="pastel-color"><span class="color-circle pastel-sage"></span>Sage</div>
+          <div class="pastel-color"><span class="color-circle pastel-peach"></span>Peach</div>
+          <div class="pastel-color"><span class="color-circle pastel-yellow"></span>Butter Yellow</div>
+        </div>
+
+        <div class="dress-code-images">
+          <img src="C:\Users\Acer\OneDrive\Desktop\WeddingInvitation(1)\assets\dresscode1.jpg" alt="Pastel dress code inspiration 1">
+          <img src="C:\Users\Acer\OneDrive\Desktop\WeddingInvitation(1)\assets\dresscode2.jpg" alt="Pastel dress code inspiration 2">
+        </div>
+      </div>
+
+      <!-- DO'S AND DON'TS -->
+      <div class="details-block">
+        <h2 class="section-title">DO'S &amp; DON'TS</h2>
+        <div class="ornament-divider">♥</div>
+
+        <div class="dos-donts">
+          <div class="dos-column">
+            <h3>DO'S</h3>
+            <ul>
+              <li>Arrive 30 minutes early.</li>
+              <li>Wear any pastel color from the palette.</li>
+              <li>Dress appropriately for the church ceremony.</li>
+              <li>Keep your phone on silent during the ceremony.</li>
+              <li>Celebrate and enjoy the day with us!</li>
+            </ul>
+          </div>
+
+          <div class="donts-column">
+            <h3>DON'TS</h3>
+            <ul>
+              <li>Please do not wear white.</li>
+              <li>Avoid bright or neon colors.</li>
+              <li>Avoid overly casual attire.</li>
+              <li>Do not use flash during the ceremony.</li>
+              <li>Please avoid unnecessary noise during the ceremony.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- OUR MOMENTS -->
+      <div class="details-block">
+        <h2 class="moments-title">Our Moments</h2>
+        <p class="moments-subtitle">A glimpse of our beautiful journey together</p>
+        <div class="ornament-divider">♥</div>
+
+        <div class="moments-gallery">
+          <div class="moment-photo"><img src="C:\Users\Acer\OneDrive\Desktop\WeddingInvitation(1)\assets\moment1.jpg" alt="Our moment 1"></div>
+          <div class="moment-photo"><img src="C:\Users\Acer\OneDrive\Desktop\WeddingInvitation(1)\assets\image2.jpg" alt="Our moment 2"></div>
+          <div class="moment-photo"><img src="C:\Users\Acer\OneDrive\Desktop\WeddingInvitation(1)\assets\moment3.jpg" alt="Our moment 3"></div>
+          <div class="moment-photo"><img src="C:\Users\Acer\OneDrive\Desktop\WeddingInvitation(1)\assets\image1.jpg" alt="Our moment 4"></div>
+          <div class="moment-photo"><img src="C:\Users\Acer\OneDrive\Desktop\WeddingInvitation(1)\assets\moment5.jpg" alt="Our moment 5"></div>
+          <div class="moment-photo"><img src="C:\Users\Acer\OneDrive\Desktop\WeddingInvitation(1)\assets\image6.jpg" alt="Our moment 6"></div>
+        </div>
+      </div>
+
+      <!-- ENTOURAGE -->
+      <div class="details-block entourage-block">
+        <h2 class="section-title">OUR ENTOURAGE</h2>
+        <div class="ornament-divider">♥</div>
+
+        <div class="wedding-family">
+          <div class="entourage-group">
+            <span class="parent-crown">♛</span>
+            <h3>BRIDE'S PARENTS</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Soliven C. Max</div>
+              <div class="entourage-person">Lilibeth R. Max</div>
+            </div>
+          </div>
+
+          <div class="entourage-group">
+            <span class="parent-crown">♛</span>
+            <h3>GROOM'S PARENTS</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Reynaldo U. Camargo</div>
+              <div class="entourage-person">Julia A. Camargo</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="entourage-separator"><span>♡</span></div>
+
+        <div class="entourage-grid">
+          <div class="entourage-group">
+            <h3>MAID OF HONOR</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Jane A. Camargo</div>
+            </div>
+          </div>
+          <div class="entourage-group">
+            <h3>BEST MAN</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Robert Sumalinog</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="entourage-separator"><span>❦</span></div>
+
+        <div class="entourage-grid">
+          <div class="entourage-group">
+            <h3>BRIDESMAIDS</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Hanna Jane M. Rodriguez</div>
+              <div class="entourage-person">Jannevie R. Villarubia</div>
+              <div class="entourage-person">Jelaica A. Sumaga</div>
+              <div class="entourage-person">Alaisa U. Maquilan</div>
+              <div class="entourage-person">Aubhrey Gaille M. Linawagan</div>
+            </div>
+          </div>
+
+          <div class="entourage-group">
+            <h3>GROOMSMEN</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Niño Louie Jay R. Max</div>
+              <div class="entourage-person">Jul Rey A. Camargo</div>
+              <div class="entourage-person">Kristian Roi S. Rodriguez</div>
+              <div class="entourage-person">Rojan C. Sumalinog</div>
+              <div class="entourage-person">Vicdel R. Villarubia</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="entourage-separator"><span>♡</span></div>
+
+        <div class="entourage-group flower-girls-group">
+          <span class="role-icon flower-icon">✿</span>
+          <h3>FLOWER GIRLS</h3>
+          <div class="entourage-names">
+            <div class="entourage-person">Rhane Kelsey C. Sumalinog</div>
+            <div class="entourage-person">Jewel M. Manlunas</div>
+            <div class="entourage-person">Niña Alexa R. Bayate</div>
+          </div>
+        </div>
+
+        <div class="entourage-separator"><span>❦</span></div>
+
+        <div class="bearers-row">
+          <div class="entourage-group">
+            <span class="role-icon">◇</span>
+            <h3>RING BEARER</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Rhys Kinsley C. Sumalinog</div>
+            </div>
+          </div>
+
+          <div class="entourage-group">
+            <span class="role-icon">✧</span>
+            <h3>COIN BEARER</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Rhoan Kailey C. Sumalinog</div>
+            </div>
+          </div>
+
+          <div class="entourage-group">
+            <span class="role-icon">✝</span>
+            <h3>BIBLE BEARER</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">VV Turi R. Villarubia</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRINCIPAL SPONSORS -->
+        <h3 class="sponsor-heading">
+          <span class="heading-leaf"></span>
+          <span class="sponsor-heading-text">PRINCIPAL SPONSORS</span>
+          <span class="heading-leaf"></span>
+        </h3>
+
+        <div class="sponsor-heading-ornament">
+          <span>✧</span><span class="heart">♡</span><span>✧</span>
+        </div>
+
+        <div class="principal-sponsors">
+          <div class="sponsor-pair">
+            <span class="pair-diamond">✦</span>
+            <span class="sponsor-name">Joyce N. Guardiario</span>
+            <span class="sponsor-plus">&</span>
+            <span class="sponsor-name">Truman L. Guardiario</span>
+          </div>
+
+          <div class="sponsor-pair">
+            <span class="pair-diamond">✦</span>
+            <span class="sponsor-name">Valentina Mejares</span>
+            <span class="sponsor-plus">&</span>
+            <span class="sponsor-name">Russel Carreon</span>
+          </div>
+
+          <div class="sponsor-pair">
+            <span class="pair-diamond">✦</span>
+            <span class="sponsor-name">Walter M. Rodriguez</span>
+            <span class="sponsor-plus">&</span>
+            <span class="sponsor-name">Nene M. Rodriguez</span>
+          </div>
+
+          <div class="sponsor-pair">
+            <span class="pair-diamond">✦</span>
+            <span class="sponsor-name">Ronito C. Max</span>
+            <span class="sponsor-plus">&</span>
+            <span class="sponsor-name">Janice Max</span>
+          </div>
+
+          <div class="sponsor-pair">
+            <span class="pair-diamond">✦</span>
+            <span class="sponsor-name">Celso U. Camargo</span>
+            <span class="sponsor-plus">&</span>
+            <span class="sponsor-name">Milagros Naid Camargo</span>
+          </div>
+
+          <div class="sponsor-pair">
+            <span class="pair-diamond">✦</span>
+            <span class="sponsor-name">Antonietta A. Germino</span>
+            <span class="sponsor-plus">&</span>
+            <span class="sponsor-name">Diogene E. Germino</span>
+          </div>
+
+          <div class="sponsor-pair">
+            <span class="pair-diamond">✦</span>
+            <span class="sponsor-name">Cresenciano Crisologo Jr.</span>
+            <span class="sponsor-plus">&</span>
+            <span class="sponsor-name">Mariel Crisologo</span>
+          </div>
+
+          <div class="sponsor-pair">
+            <span class="pair-diamond">✦</span>
+            <span class="sponsor-name">John Calvin Bayon-on</span>
+            <span class="sponsor-plus">&</span>
+            <span class="sponsor-name">Teresa Bayon-on</span>
+          </div>
+        
+        </div>
+
+        <!-- ADDITIONAL PRINCIPAL SPONSOR - CENTERED -->
+        <div class="principal-sponsor-centered">
+          <div class="sponsor-pair">
+            <span class="pair-diamond">✦</span>
+            <span class="sponsor-name">Mrs. Venecia Vicenta A. Rodriguez</span>
+            <span class="sponsor-plus">&</span>
+            <span class="sponsor-name">Mr. Roland T. Rodriguez</span>
+          </div>
+        </div>
+
+        <!-- SECONDARY SPONSORS -->
+        <h3 class="sponsor-heading">
+
+          <span class="heading-leaf"></span>
+          <span class="sponsor-heading-text">SECONDARY SPONSORS</span>
+          <span class="heading-leaf"></span>
+        </h3>
+
+        <div class="sponsor-heading-ornament">
+          <span>✧</span><span class="heart">♡</span><span>✧</span>
+        </div>
+
+        <div class="secondary-sponsors">
+          <div class="entourage-group">
+            <span class="sponsor-symbol">✦</span>
+            <h3>CORD</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Marlene Rodriguez</div>
+              <div class="entourage-person">Ruben Rodriguez</div>
+            </div>
+          </div>
+
+          <div class="entourage-group">
+            <span class="sponsor-symbol">♧</span>
+            <h3>CANDLE</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Anne Moran</div>
+              <div class="entourage-person">Jan Moran</div>
+            </div>
+          </div>
+
+          <div class="entourage-group">
+            <span class="sponsor-symbol">❦</span>
+            <h3>VEIL</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Madeline Villarubia</div>
+              <div class="entourage-person">Victoriano Villarubia</div>
+            </div>
+          </div>
+
+          <div class="entourage-group">
+            <span class="sponsor-symbol">♡</span>
+            <h3>BREAD &amp; WINE</h3>
+            <div class="entourage-names">
+              <div class="entourage-person">Francisca A. Sumaga</div>
+              <div class="entourage-person">Jesson Jonathan Abergas Sumaga</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GIFT INFORMATION -->
+      <div class="details-block">
+        <h2 class="section-title">GIFT INFORMATION</h2>
+        <div class="ornament-divider">♥</div>
+        <div class="gift-icon">♡</div>
+
+        <p class="gift-message">
+          Your presence is the greatest gift of all.
+        </p>
+
+        <p class="gift-message gift-message-small">
+          Should you wish to bless us with a gift,<br>
+          a monetary gift or envelope would be<br>
+          sincerely appreciated.
+        </p>
+
+        <div class="gift-note">
+          With love and gratitude, thank you for<br>
+          being part of our special day.
+        </div>
+      </div>
+
+      <!-- RSVP -->
+      <div class="details-block">
+        <h2 class="section-title">RSVP</h2>
+        <div class="ornament-divider">♥</div>
+
+        <p class="rsvp-intro">
+          Kindly let us know if you can celebrate<br>
+          this special day with us.
+        </p>
+
+        <form class="rsvp-form" id="rsvpForm">
+          <div class="form-group">
+            <label for="guestName">YOUR NAME</label>
+            <input type="text" id="guestName" name="guestName" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="attendance">WILL YOU ATTEND?</label>
+            <select id="attendance" name="attendance" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="Joyfully Accept">Joyfully Accept</option>
+              <option value="Regretfully Decline">Regretfully Decline</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="guestNumberGroup" hidden>
+            <label for="guestCount">NUMBER OF ADDITIONAL PEOPLE YOU'LL BE BRINGING</label>
+            <select id="guestCount" name="guestCount">
+              <option value="" disabled selected>Select number of people</option>
+              <option value="0">0 Guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests (maximum)</option>
+            </select>
+          </div>
+
+          <div class="guest-names-section" id="guestNamesSection">
+            <div class="guest-names-title">GUEST NAMES</div>
+            <div id="guestNamesList"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="guestMessage">MESSAGE</label>
+            <textarea id="guestMessage" name="guestMessage" rows="4" placeholder="Leave a message for the couple (optional)"></textarea>
+          </div>
+
+          <button type="submit" class="rsvp-submit">SEND RSVP</button>
+          <p id="rsvpError" class="rsvp-error" role="alert" hidden></p>
+        </form>
+
+        <div class="rsvp-success" id="rsvpSuccess">
+          <div class="success-heart">♥</div>
+          <div class="success-title">Thank You!</div>
+          <div class="success-text">
+            Your RSVP has been sent.<br>
+            We look forward to celebrating with you!
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="wedding-footer">
+        <div class="ornament-divider">♥</div>
+        <div class="footer-names">Rey Jenus &amp; Jay Anne</div>
+        <div class="footer-date">11 · 21 · 2026</div>
+        <div class="footer-thank-you">With love, always.</div>
+      </footer>
+
+    </div>
+  </section>
+
+  <audio id="weddingMusic" preload="metadata" loop>
+    <source src="C:\Users\Acer\OneDrive\Desktop\WeddingInvitation(1)\assets\music1.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    "use strict";
+
+    // DECORATIVE HEARTS AND SPARKLES
+    function createDecorations() {
+      const containers = document.querySelectorAll(".floating-decor");
+
+      containers.forEach((container, sectionIndex) => {
+        const section = container.parentElement;
+        const height = Math.max(section.offsetHeight, window.innerHeight);
+        const opening = sectionIndex === 0;
+
+        const sparkleCount = opening
+          ? 12
+          : Math.min(38, Math.max(18, Math.round(height / 180)));
+
+        const heartCount = opening
+          ? 4
+          : Math.min(12, Math.max(6, Math.round(height / 550)));
+
+        container.replaceChildren();
+
+        for (let i = 0; i < sparkleCount; i++) {
+          const sparkle = document.createElement("span");
+          sparkle.className = "sparkle";
+          sparkle.textContent = Math.random() > 0.5 ? "✦" : "✧";
+
+          const onLeft = Math.random() > 0.5;
+          sparkle.style.left = (
+            onLeft
+              ? 3 + Math.random() * 13
+              : 84 + Math.random() * 13
+          ) + "%";
+
+          sparkle.style.top = (2 + Math.random() * 96) + "%";
+          sparkle.style.fontSize = (8 + Math.random() * 7) + "px";
+          sparkle.style.animationDelay = (-Math.random() * 6) + "s";
+          sparkle.style.animationDuration = (4 + Math.random() * 3) + "s";
+          container.appendChild(sparkle);
+        }
+
+        for (let i = 0; i < heartCount; i++) {
+          const heart = document.createElement("span");
+          heart.className = "falling-heart";
+          heart.textContent = Math.random() > 0.6 ? "♥" : "♡";
+          heart.style.left = (4 + Math.random() * 92) + "%";
+          heart.style.top = (Math.random() * 100) + "%";
+          heart.style.fontSize = (9 + Math.random() * 5) + "px";
+          heart.style.animationDelay = (-Math.random() * 18) + "s";
+          heart.style.animationDuration = (18 + Math.random() * 12) + "s";
+          container.appendChild(heart);
+        }
+      });
+    }
+
+    createDecorations();
+
+    // COUNTDOWN: NOVEMBER 21, 2026, 2:00 PM PHILIPPINE TIME
+    const weddingDate = new Date("2026-11-21T14:00:00+08:00").getTime();
+
+    function updateCountdown() {
+      const remaining = Math.max(0, weddingDate - Date.now());
+      const days = Math.floor(remaining / 86400000);
+      const hours = Math.floor((remaining % 86400000) / 3600000);
+      const minutes = Math.floor((remaining % 3600000) / 60000);
+      const seconds = Math.floor((remaining % 60000) / 1000);
+
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ENVELOPE AND MUSIC PLAYER
+    const envelope = document.getElementById("envelope");
+    const waxSeal = document.getElementById("waxSeal");
+    const openingExtras = document.getElementById("openingExtras");
+    const openingScreen = document.getElementById("openingScreen");
+
+    const audio = document.getElementById("weddingMusic");
+    const musicToggle = document.getElementById("musicToggle");
+    const musicRestart = document.getElementById("musicRestart");
+    const musicRepeat = document.getElementById("musicRepeat");
+    const musicProgress = document.getElementById("musicProgress");
+    const musicStatus = document.getElementById("musicStatus");
+    const heartSymbol = document.querySelector(".heart-symbol");
+
+    let invitationOpened = false;
+    let repeatEnabled = true;
+
+    function updateMusicUI() {
+      const playing = !audio.paused && !audio.ended;
+
+      musicToggle.setAttribute(
+        "aria-label",
+        playing ? "Pause music" : "Play music"
+      );
+      musicToggle.setAttribute("aria-pressed", String(playing));
+
+      heartSymbol.setAttribute(
+        "d",
+        playing
+          ? "M20 16h4v17h-4z M28 16h4v17h-4z"
+          : "M22 16v17l13-8.5Z"
+      );
+
+      if (audio.error) {
+        musicStatus.textContent = "Music file unavailable";
+      } else {
+        musicStatus.textContent = playing
+          ? "Playing our love song"
+          : "Tap the heart to play";
+      }
+    }
+
+    function playMusic() {
+      try {
+        const result = audio.play();
+
+        if (result && typeof result.catch === "function") {
+          result.catch(() => {
+            musicStatus.textContent = "Tap the heart to play";
+          });
+        }
+      } catch (error) {
+        musicStatus.textContent = "Unable to play music";
+      }
+    }
+
+    function openInvitation() {
+      if (invitationOpened) return;
+
+      invitationOpened = true;
+      envelope.classList.add("opened");
+      openingScreen.classList.add("is-opened");
+
+      waxSeal.setAttribute("aria-expanded", "true");
+      waxSeal.disabled = true;
+
+      window.setTimeout(() => {
+        openingExtras.hidden = false;
+      }, 650);
+
+      playMusic();
+    }
+
+    waxSeal.addEventListener("click", openInvitation);
+
+    musicToggle.addEventListener("click", () => {
+      if (audio.paused) {
+        playMusic();
+      } else {
+        audio.pause();
+      }
+    });
+
+    musicRestart.addEventListener("click", () => {
+      audio.currentTime = 0;
+      if (audio.paused) playMusic();
+    });
+
+    musicRepeat.addEventListener("click", () => {
+      repeatEnabled = !repeatEnabled;
+      audio.loop = repeatEnabled;
+      musicRepeat.classList.toggle("is-active", repeatEnabled);
+      musicRepeat.setAttribute("aria-pressed", String(repeatEnabled));
+    });
+
+    ["play", "pause", "ended", "error"].forEach(eventName => {
+      audio.addEventListener(eventName, updateMusicUI);
+    });
+
+    audio.addEventListener("timeupdate", () => {
+      if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
+
+      const percentage = (audio.currentTime / audio.duration) * 100;
+      musicProgress.value = percentage;
+      musicProgress.style.setProperty("--progress", percentage + "%");
+    });
+
+    musicProgress.addEventListener("input", () => {
+      if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
+
+      audio.currentTime =
+        (Number(musicProgress.value) / 100) * audio.duration;
+
+      musicProgress.style.setProperty(
+        "--progress",
+        musicProgress.value + "%"
+      );
+    });
+
+    // MANUAL SCROLL ONLY
+    document.getElementById("scrollIndicator").addEventListener("click", () => {
+      document.getElementById("countdownSection").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+
+    // RSVP
+    const RSVP_SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbyuBTsm6aBwZ3IGMtZBlUPYMvfMMN-blcouamx5IZF1k2TOCcLq-lJQWx154-Lqh0Ypgw/exec";
+
+    const rsvpForm = document.getElementById("rsvpForm");
+    const attendance = document.getElementById("attendance");
+    const guestCount = document.getElementById("guestCount");
+    const guestNumberGroup = document.getElementById("guestNumberGroup");
+    const guestNamesSection = document.getElementById("guestNamesSection");
+    const guestNamesList = document.getElementById("guestNamesList");
+
+    function updateGuestFields() {
+      const accepting = attendance.value === "Joyfully Accept";
+
+      guestNumberGroup.hidden = !accepting;
+      guestCount.required = accepting;
+
+      if (!accepting) guestCount.value = "";
+
+      const count = accepting
+        ? Math.min(2, Math.max(0, Number(guestCount.value || 0)))
+        : 0;
+
+      guestNamesSection.classList.toggle("show", count > 0);
+
+      const previousValues = Array.from(
+        guestNamesList.querySelectorAll("input")
+      ).map(input => input.value);
+
+      guestNamesList.replaceChildren();
+
+      for (let i = 0; i < count; i++) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "guest-name-field";
+
+        const label = document.createElement("label");
+        label.htmlFor = "guest" + (i + 1);
+        label.textContent = "Guest " + (i + 1) + " full name";
+
+        const input = document.createElement("input");
+        input.id = "guest" + (i + 1);
+        input.name = "guest" + (i + 1);
+        input.type = "text";
+        input.required = true;
+        input.placeholder = "Guest " + (i + 1) + " name";
+        input.value = previousValues[i] || "";
+
+        wrapper.append(label, input);
+        guestNamesList.append(wrapper);
+      }
+    }
+
+    attendance.addEventListener("change", updateGuestFields);
+    guestCount.addEventListener("change", updateGuestFields);
+    updateGuestFields();
+
+    rsvpForm.addEventListener("submit", async event => {
+      event.preventDefault();
+
+      if (!rsvpForm.reportValidity()) return;
+
+      const submitButton = rsvpForm.querySelector('[type="submit"]');
+      const errorMessage = document.getElementById("rsvpError");
+
+      submitButton.disabled = true;
+      submitButton.textContent = "SENDING…";
+      errorMessage.hidden = true;
+
+      const payload = {
+        name: document.getElementById("guestName").value.trim(),
+        attendance: attendance.value,
+        guestCount: attendance.value === "Joyfully Accept"
+          ? Number(guestCount.value || 0)
+          : 0,
+        guest1: document.getElementById("guest1")?.value.trim() || "",
+        guest2: document.getElementById("guest2")?.value.trim() || "",
+        message: document.getElementById("guestMessage").value.trim()
+      };
+
+      try {
+        await fetch(RSVP_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        rsvpForm.hidden = true;
+        document.getElementById("rsvpSuccess").classList.add("show");
+
+      } catch (error) {
+        errorMessage.textContent =
+          "Unable to send your RSVP. Please check your connection and try again.";
+        errorMessage.hidden = false;
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "SEND RSVP";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -2049,3 +2049,35 @@ img {
     margin-top: 12px;
   }
 }
+
+
+/* FIX: SHOW THE FULL ENVELOPE AND CLICK TO OPEN */
+@media screen and (min-width: 601px) {
+  .opening-screen {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: visible;
+    padding-top: 145px;
+    padding-bottom: 80px;
+    align-items: center;
+  }
+
+  .opening-content {
+    width: min(700px, 100%);
+    flex-shrink: 0;
+  }
+
+  .envelope-stage {
+    flex-shrink: 0;
+    margin-bottom: 25px;
+  }
+
+  .open-text {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    z-index: 20;
+  }
+}

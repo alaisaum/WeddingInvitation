@@ -8,7 +8,7 @@
   
     <meta property="og:type" content="website">
   <meta property="og:title" content="YOU ARE CORDIALLY INVITED TO CELEBRATE">
-  <meta property="og:description" content="Rey Jenus & Jay Anne are getting married! Join us on November 21, 2026, at 5:00 PM.">
+  <meta property="og:description" content="Rey Jenus & Jay Anne are getting married! Join us on November 21, 2026, at 2:00 PM.">
   <meta property="og:image" content="https://alaisaum.github.io/WeddingInvitation/assets/image1.jpg">
   <meta property="og:url" content="https://alaisaum.github.io/WeddingInvitation/">
   <meta name="twitter:card" content="summary_large_image">
@@ -627,6 +627,18 @@
   <script>
     "use strict";
 
+    // LOCK SCROLLING UNTIL THE ENVELOPE IS OPENED
+document.documentElement.style.overflow = "hidden";
+document.body.style.overflow = "hidden";
+document.documentElement.style.overscrollBehavior = "none";
+document.body.style.overscrollBehavior = "none";
+
+function unlockInvitationScroll() {
+  document.documentElement.style.overflow = "";
+  document.body.style.overflow = "";
+  document.documentElement.style.overscrollBehavior = "";
+  document.body.style.overscrollBehavior = "";
+}
     // DECORATIVE HEARTS AND SPARKLES
     function createDecorations() {
       const containers = document.querySelectorAll(".floating-decor");
@@ -756,22 +768,33 @@
       }
     }
 
-    function openInvitation() {
-      if (invitationOpened) return;
+   
+function openInvitation() {
+  if (invitationOpened) return;
 
-      invitationOpened = true;
-      envelope.classList.add("opened");
-      openingScreen.classList.add("is-opened");
+  invitationOpened = true;
+  envelope.classList.add("opened");
+  openingScreen.classList.add("is-opened");
 
-      waxSeal.setAttribute("aria-expanded", "true");
-      waxSeal.disabled = true;
+  waxSeal.setAttribute("aria-expanded", "true");
+  waxSeal.disabled = true;
 
-      window.setTimeout(() => {
-        openingExtras.hidden = false;
-      }, 650);
+  window.setTimeout(() => {
+    openingExtras.hidden = false;
+  }, 650);
 
-      playMusic();
-    }
+  playMusic();
+
+  window.setTimeout(() => {
+    unlockInvitationScroll();
+
+    document.getElementById("countdownSection").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }, 5000);
+}
+
 
     waxSeal.addEventListener("click", openInvitation);
 
